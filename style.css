@@ -1,8 +1,21 @@
-body {
+
+@keyframes slide {
+    from {
+        transform: translateY(-600px);
+    }
+    to {
+        transform: translateY(0);
+    }
+  }
+  body {
+    background-image: url(bg.jpg);
+    animation-name: slide;
+    animation-duration: 2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
     display: flex;
     margin-top: 50px;
     justify-content: center;
-    background-color: #FFFCFF;
   }
   button {
     width: 75px;
@@ -16,8 +29,11 @@ body {
   }
   
   #header {
+    border-style:ridge;
+    border-radius: 30px;
     padding: 10px;
-    color: #d36c6c;
+    color: #4da4af;
+    text-shadow: #211ed1 2px 2px;
     font-size: 26px;
     font-family: sans-serif;
     display: flex;
@@ -45,12 +61,16 @@ body {
     flex-wrap: wrap;
   }
   .day {
+    border-style: inset;
+    border-radius: 25px;
+    border-color: #247BA0; 
+    opacity: 0.7;
+    transition: opacity 600ms ease-in-out;
     width: 100px;
     padding: 10px;
     height: 100px;
     cursor: pointer;
     box-sizing: border-box;
-    background-color: white;
     margin: 5px;
     box-shadow: 0px 0px 3px #CBD4C2;
     display: flex;
@@ -58,7 +78,8 @@ body {
     justify-content: space-between;
   }
   .day:hover {
-    background-color: #e8faed;
+    opacity: 1;
+    background-color: skyblue;
   }
   
   .day + #currentDay {
