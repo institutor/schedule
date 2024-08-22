@@ -1,5 +1,5 @@
 
-@keyframes slide {
+@keyframes slideDown {
     from {
         transform: translateY(-600px);
     }
@@ -7,12 +7,36 @@
         transform: translateY(0);
     }
   }
+
+  @keyframes slideRight {
+    from {
+        transform: translateX(-600px);
+    }
+    to {
+        transform: translateY(0);
+    }
+  }
+
+  @keyframes slideLeft {
+    from {
+      transform: translateX(600px);
+  }
+  to {
+      transform: translateX(0);
+  }
+}
+@keyframes slideUp {
+  from {
+      transform: translateY(600px);
+  }
+  to {
+      transform: translateY(0);
+  }
+}
+
+
   body {
     background-image: url(bg.jpg);
-    animation-name: slide;
-    animation-duration: 2s;
-    animation-timing-function: ease-in;
-    animation-delay: 0s;
     display: flex;
     margin-top: 50px;
     justify-content: center;
@@ -29,6 +53,10 @@
   }
   
   #header {
+    animation-name: slideDown;
+    animation-duration: 0.6s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
     border-style:ridge;
     border-radius: 30px;
     padding: 10px;
@@ -46,21 +74,31 @@
     width: 770px;
   }
   #weekdays {
+    animation-name: slideUp;
+    animation-duration: 1s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
     width: 100%;
     display: flex;
     color: #247BA0;
   }
   #weekdays div {
+    
     width: 100px;
     padding: 10px;
   }
   #calendar {
+    
     width: 100%;
     margin: auto;
     display: flex;
     flex-wrap: wrap;
   }
   .day {
+    animation-name: slideUp;
+    animation-duration: 1.2s;
+    animation-timing-function: ease-in;
+    animation-delay: 0s;
     border-style: inset;
     border-radius: 25px;
     border-color: #247BA0; 
